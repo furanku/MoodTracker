@@ -3,6 +3,7 @@ package com.watashiwa.furanku.moodtracker.controller;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -64,11 +65,11 @@ public class WelcomeActivity extends AppCompatActivity {
 			public void run() {
 				//catching an eventual error
 				try {
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
+
 				//starting the main activity
 				Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
 				startActivity(intent);
