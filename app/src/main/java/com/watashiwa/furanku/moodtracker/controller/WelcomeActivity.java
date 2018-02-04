@@ -29,6 +29,8 @@ public class WelcomeActivity extends AppCompatActivity {
 	 */
 	private ImageView mImageView;
 
+	public static final int MAIN_ACTIVITY_REQUEST_CODE = 1;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,14 +67,14 @@ public class WelcomeActivity extends AppCompatActivity {
 			public void run() {
 				//catching an eventual error
 				try {
-					Thread.sleep(2000);
+					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 
 				//starting the main activity
 				Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
-				startActivity(intent);
+				startActivityForResult(intent, MAIN_ACTIVITY_REQUEST_CODE);
 			}
 	}).start();
 	}
