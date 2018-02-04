@@ -16,16 +16,20 @@ import java.util.List;
  * it shows all the different views
  */
 public class MainActivity extends AppCompatActivity {
+
 	//to make the eventual log
 	private final static String TAG = "TestMainActivity";
+
 	/**
 	 * the recycler view where are showing all the views as a list
 	 */
 	private RecyclerView mRecyclerView;
+
 	/**
 	 * adapter of this recycler view
 	 */
 	private RecyclerView.Adapter mAdapter;
+
 	private List<ListItem> listItems = new ArrayList<>();
 
 	@Override
@@ -55,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 		//this specifies an adapter
-		mAdapter = new SmileyAdapter(listItems);
+		mAdapter = new SmileyAdapter(listItems, this);
 		mRecyclerView.setAdapter(mAdapter);
 		/**
 		 * this function is called to initialize the list
