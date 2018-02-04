@@ -15,8 +15,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="0dp"
-        android:background="@null"
-        android:src="@drawable/smiley_happy" />
+        android:src="@drawable/smiley_happy"
+        android:background="@drawable/selector_image"
+        android:longClickable="true"/>
 
     <ImageButton
         android:id="@+id/list_layout_add_note_btn"
@@ -24,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="15dp"
-        android:src="@drawable/ic_note_add_black"
-        android:background="@null"/>
+        android:background="@null"
+        android:src="@drawable/ic_note_add_black" />
 
 
     <LinearLayout
