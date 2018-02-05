@@ -69,15 +69,15 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	/**
-	 * This function adds items in the Arraylist
+	 * This function adds items in the Array list
 	 * note that the order is the same we want in the recycler view
 	 */
 	public void addItems() {
-		listItems.add(new ListItem(R.drawable.smiley_super_happy, "#fff9ec4f"));
-		listItems.add(new ListItem(R.drawable.smiley_happy, "#ffb8e986"));
-		listItems.add(new ListItem(R.drawable.smiley_normal, "#a5468ad9"));
-		listItems.add(new ListItem(R.drawable.smiley_disappointed, "#ff9b9b9b"));
 		listItems.add(new ListItem(R.drawable.smiley_sad, "#ffde3c50"));
+		listItems.add(new ListItem(R.drawable.smiley_disappointed, "#ff9b9b9b"));
+		listItems.add(new ListItem(R.drawable.smiley_normal, "#a5468ad9"));
+		listItems.add(new ListItem(R.drawable.smiley_happy, "#ffb8e986"));
+		listItems.add(new ListItem(R.drawable.smiley_super_happy, "#fff9ec4f"));
 	}
 }
 
