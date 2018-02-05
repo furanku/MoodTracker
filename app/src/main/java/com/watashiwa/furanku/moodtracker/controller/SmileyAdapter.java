@@ -1,19 +1,20 @@
 package com.watashiwa.furanku.moodtracker.controller;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.watashiwa.furanku.moodtracker.R;
-import com.watashiwa.furanku.moodtracker.model.AddComment;
+import com.watashiwa.furanku.moodtracker.view.AddComment;
 import com.watashiwa.furanku.moodtracker.model.ListItem;
 
 import java.util.List;
@@ -90,12 +91,10 @@ public class SmileyAdapter extends RecyclerView.Adapter<SmileyAdapter.SmileyView
 		//This sets the image and background color of each view
 		holder.smileyButton.setImageResource(currentItem.getImageResource());
 		holder.cardView.setCardBackgroundColor(Color.parseColor(currentItem.getColorResource()));
-
 		holder.commentButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Dialog dialog = new AddComment(context);
-				dialog.show();
+				new AddComment(context);
 			}
 		});
 	}
