@@ -1,21 +1,17 @@
 package com.watashiwa.furanku.moodtracker.controller;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
 
 import com.watashiwa.furanku.moodtracker.R;
-import com.watashiwa.furanku.moodtracker.view.AddComment;
 import com.watashiwa.furanku.moodtracker.model.ListItem;
+import com.watashiwa.furanku.moodtracker.view.AddComment;
 
 import java.util.List;
 
@@ -71,6 +67,7 @@ public class SmileyAdapter extends RecyclerView.Adapter<SmileyAdapter.SmileyView
 			//referencing each element of the recycler view with its unique id
 			smileyButton = itemView.findViewById(R.id.list_layout_smiley_btn);
 			commentButton = itemView.findViewById((R.id.list_layout_add_note_btn));
+			commentButton.setEnabled(false);
 			historyButton = itemView.findViewById((R.id.list_layout_history_btn));
 			cardView = itemView.findViewById(R.id.list_layout_card_view);
 		}
@@ -84,13 +81,19 @@ public class SmileyAdapter extends RecyclerView.Adapter<SmileyAdapter.SmileyView
 	 * @param position
 	 */
 	@Override
-	public void onBindViewHolder(SmileyViewHolder holder, final int position) {
+	public void onBindViewHolder(final SmileyViewHolder holder, final int position) {
 
 		//This gets the elements in a specific position
 		final ListItem currentItem = mListItems.get(position);
 		//This sets the image and background color of each view
 		holder.smileyButton.setImageResource(currentItem.getImageResource());
 		holder.cardView.setCardBackgroundColor(Color.parseColor(currentItem.getColorResource()));
+		holder.smileyButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				holder.commentButton.setEnabled(true);
+			}
+		});
 		holder.commentButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
