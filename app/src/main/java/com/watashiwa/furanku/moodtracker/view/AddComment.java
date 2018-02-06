@@ -133,8 +133,6 @@ public class AddComment extends Dialog {
 				editText.setText(" ");
 			}
 		});
-		//creates the builder just configured
-		//builder.create()
 		//shows the builder just created
 		builder.show();
 		//sets the OK button disabled by default
