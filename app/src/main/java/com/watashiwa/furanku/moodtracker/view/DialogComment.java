@@ -109,7 +109,7 @@ public class AddComment extends Dialog {
 				 * if the user reached the max number of character a little message is shown as toast
 				 */
 				if (editText.length() == MAX_CHARACTER) {
-					Toast toast = Toast.makeText(getContext(), "Number Max of character reached ", Toast.LENGTH_LONG);
+					Toast toast = Toast.makeText(getContext(), "Number Max of characters reached ", Toast.LENGTH_LONG);
 					toast.show();
 				}
 			}

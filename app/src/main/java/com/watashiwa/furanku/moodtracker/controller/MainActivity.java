@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.view.WindowManager;
 
 import com.watashiwa.furanku.moodtracker.R;
 import com.watashiwa.furanku.moodtracker.model.ListItem;
@@ -35,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		/**
+		 * Sets the fullScreen in all the app
+		 */
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		/**
+		 * Hides the action bar
+		 */
+		getSupportActionBar().hide();
 
 		/**
 		 * this sets the specific layout of this activity
